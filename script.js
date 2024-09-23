@@ -1,11 +1,11 @@
-// Productos de ejemplo
+// Productos de ejemplo con imágenes reales de Unsplash
 const productos = [
     {
         id: 1,
         nombre: "Camiseta Clásica",
         descripcion: "Camiseta de algodón de alta calidad disponible en varios colores.",
         precio: 19.99,
-        imagen: "https://via.placeholder.com/300x200?text=Camiseta+Clásica",
+        imagen: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?fit=crop&w=600&q=60",
         color: ["Rojo", "Azul", "Verde", "Negro"]
     },
     {
@@ -13,7 +13,7 @@ const productos = [
         nombre: "Pantalones Chinos",
         descripcion: "Pantalones cómodos para cualquier ocasión, disponibles en múltiples tallas.",
         precio: 39.99,
-        imagen: "https://via.placeholder.com/300x200?text=Pantalones+Chinos",
+        imagen: "https://images.unsplash.com/photo-1524499982527-1e6b6d1f715f?fit=crop&w=600&q=60",
         color: ["Beige", "Gris", "Azul Marino", "Negro"]
     },
     {
@@ -21,7 +21,7 @@ const productos = [
         nombre: "Zapatos Deportivos",
         descripcion: "Zapatos elegantes y duraderos, perfectos para el día a día.",
         precio: 59.99,
-        imagen: "https://via.placeholder.com/300x200?text=Zapatos+Deportivos",
+        imagen: "https://images.unsplash.com/photo-1515542622106-78bda8ba0b77?fit=crop&w=600&q=60",
         color: ["Blanco", "Negro", "Gris", "Rojo"]
     },
     {
@@ -29,7 +29,7 @@ const productos = [
         nombre: "Gorra Urbana",
         descripcion: "Gorra moderna para el día a día, ajustable para mayor comodidad.",
         precio: 14.99,
-        imagen: "https://via.placeholder.com/300x200?text=Gorra+Urbana",
+        imagen: "https://images.unsplash.com/photo-1520975918873-0225e6c42d1b?fit=crop&w=600&q=60",
         color: ["Azul", "Negro", "Rojo", "Blanco"]
     },
     {
@@ -37,7 +37,7 @@ const productos = [
         nombre: "Chaqueta de Cuero",
         descripcion: "Chaqueta de cuero genuino, ideal para lucir con estilo.",
         precio: 89.99,
-        imagen: "https://via.placeholder.com/300x200?text=Chaqueta+de+Cuero",
+        imagen: "https://images.unsplash.com/photo-1520974688385-2e291bd6ee53?fit=crop&w=600&q=60",
         color: ["Negro", "Marrón"]
     },
     {
@@ -45,7 +45,7 @@ const productos = [
         nombre: "Bufanda de Lana",
         descripcion: "Bufanda cálida y suave, perfecta para los días fríos.",
         precio: 24.99,
-        imagen: "https://via.placeholder.com/300x200?text=Bufanda+de+Lana",
+        imagen: "https://images.unsplash.com/photo-1563225400-40d4be13a0d4?fit=crop&w=600&q=60",
         color: ["Gris", "Azul", "Rojo", "Verde"]
     },
     {
@@ -53,7 +53,7 @@ const productos = [
         nombre: "Reloj Clásico",
         descripcion: "Reloj de pulsera con diseño clásico y elegante.",
         precio: 49.99,
-        imagen: "https://via.placeholder.com/300x200?text=Reloj+Clásico",
+        imagen: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?fit=crop&w=600&q=60",
         color: ["Oro", "Plata", "Negro"]
     },
     {
@@ -61,7 +61,7 @@ const productos = [
         nombre: "Bolso de Mano",
         descripcion: "Bolso de mano espacioso y elegante, perfecto para cualquier ocasión.",
         precio: 34.99,
-        imagen: "https://via.placeholder.com/300x200?text=Bolso+de+Mano",
+        imagen: "https://images.unsplash.com/photo-1520974688385-2e291bd6ee53?fit=crop&w=600&q=60",
         color: ["Marrón", "Negro", "Rojo", "Azul"]
     }
 ];
