@@ -174,6 +174,9 @@ function actualizarCarrito() {
 
     totalCarrito.textContent = total.toFixed(2);
     cantidadCarrito.textContent = cantidad;
+
+    // Guardar el carrito en localStorage
+    guardarCarrito();
 }
 
 // Función para abrir el modal del carrito
@@ -191,7 +194,8 @@ function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
-// Cargar carrito desde localStorage
+
+// Función para cargar el carrito desde localStorage
 function cargarCarrito() {
     const carritoGuardado = localStorage.getItem('carrito');
     if (carritoGuardado) {
@@ -200,27 +204,16 @@ function cargarCarrito() {
     }
 }
 
-// Guardar carrito en localStorage cada vez que se actualiza
+// Función para guardar el carrito en localStorage
 function guardarCarrito() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-// Modifica la función actualizarCarrito para guardar los cambios
-function actualizarCarrito() {
-    // ... Código existente ...
-
-    // Guardar el carrito
-    guardarCarrito();
-}
-
-// Llama a cargarCarrito al inicio
+// Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     mostrarProductos();
     cargarCarrito();
 });
-
-// Event Listeners
-document.addEventListener('DOMContentLoaded', mostrarProductos);
 
 productosDiv.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
