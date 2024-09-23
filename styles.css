@@ -6,107 +6,149 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
     color: #333;
 }
 
 /* Header */
 header {
-    background-color: #333;
+    background-color: #4a90e2;
     color: #fff;
-    padding: 20px;
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .carrito button {
-    background: none;
+    background: #fff;
+    color: #4a90e2;
     border: none;
-    color: #fff;
-    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
     cursor: pointer;
+    position: relative;
+    transition: background 0.3s, color 0.3s;
+}
+
+.carrito button:hover {
+    background: #e6f2ff;
+    color: #337ab7;
+}
+
+#cantidad-carrito {
+    font-weight: bold;
+    margin-left: 5px;
 }
 
 /* Productos */
 .productos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 25px;
+    padding: 40px;
 }
 
 .producto {
     background-color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .producto img {
     max-width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .producto h3 {
     margin: 15px 0;
-    font-size: 20px;
+    font-size: 22px;
+    color: #4a90e2;
 }
 
 .producto p {
-    color: #777;
+    color: #666;
     margin-bottom: 15px;
+    font-size: 14px;
+    height: 40px;
+    overflow: hidden;
 }
 
 .producto .precio {
-    font-size: 18px;
-    color: #000;
+    font-size: 20px;
+    color: #27ae60;
     margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .producto button {
-    background-color: #28a745;
+    background-color: #27ae60;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
 }
 
 .producto button:hover {
-    background-color: #218838;
+    background-color: #1e8449;
 }
 
 /* Modal Carrito */
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed; 
-    z-index: 1; 
+    z-index: 1000; 
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgba(0,0,0,0.4); 
+    background-color: rgba(0,0,0,0.5); 
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .modal-contenido {
-    background-color: #fefefe;
-    margin: 10% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-    max-width: 500px;
-    border-radius: 5px;
+    background-color: #fff;
+    margin: 5% auto; 
+    padding: 30px;
+    border: none;
+    width: 90%; 
+    max-width: 600px;
+    border-radius: 10px;
     position: relative;
+    animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
 }
 
 .cerrar {
@@ -116,18 +158,18 @@ header h1 {
     font-weight: bold;
     position: absolute;
     right: 20px;
-    top: 10px;
+    top: 15px;
     cursor: pointer;
+    transition: color 0.3s;
 }
 
 .cerrar:hover,
 .cerrar:focus {
     color: #000;
-    text-decoration: none;
 }
 
 #lista-carrito {
-    max-height: 300px;
+    max-height: 400px;
     overflow-y: auto;
     margin-bottom: 20px;
 }
@@ -135,49 +177,118 @@ header h1 {
 .item-carrito {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .item-carrito p {
     margin: 0;
+    font-size: 16px;
+}
+
+.item-carrito .cantidad {
+    display: flex;
+    align-items: center;
+}
+
+.item-carrito .cantidad button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background 0.3s;
+}
+
+.item-carrito .cantidad button:hover {
+    background-color: #357ab8;
 }
 
 .total {
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
     margin-bottom: 20px;
 }
 
 #vaciar-carrito {
-    background-color: #dc3545;
+    background-color: #c0392b;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 10px 25px;
+    border-radius: 25px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
 }
 
 #vaciar-carrito:hover {
-    background-color: #c82333;
+    background-color: #a93226;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #4a90e2;
     color: #fff;
     text-align: center;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 40px;
 }
 
 /* Responsividad */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .productos {
-        grid-template-columns: 1fr;
+        padding: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .producto img {
+        height: 150px;
     }
 
     .modal-contenido {
-        width: 95%;
+        margin: 10% auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .carrito button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .producto h3 {
+        font-size: 20px;
+    }
+
+    .producto .precio {
+        font-size: 18px;
+    }
+
+    .producto button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .total {
+        font-size: 20px;
+    }
+
+    #vaciar-carrito {
+        padding: 8px 20px;
+        font-size: 14px;
     }
 }
