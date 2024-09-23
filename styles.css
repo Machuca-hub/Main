@@ -237,7 +237,24 @@ footer {
     padding: 20px 0;
     position: relative;
     margin-top: 40px;
+
 }
+
+/* Colores disponibles */
+.colores {
+    margin-bottom: 10px;
+}
+
+.colores .color {
+    display: inline-block;
+    background-color: #ddd;
+    color: #333;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 2px;
+}
+
 
 /* Responsividad */
 @media (max-width: 768px) {

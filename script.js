@@ -191,6 +191,33 @@ function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
+// Cargar carrito desde localStorage
+function cargarCarrito() {
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+        carrito = JSON.parse(carritoGuardado);
+        actualizarCarrito();
+    }
+}
+
+// Guardar carrito en localStorage cada vez que se actualiza
+function guardarCarrito() {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// Modifica la función actualizarCarrito para guardar los cambios
+function actualizarCarrito() {
+    // ... Código existente ...
+
+    // Guardar el carrito
+    guardarCarrito();
+}
+
+// Llama a cargarCarrito al inicio
+document.addEventListener('DOMContentLoaded', () => {
+    mostrarProductos();
+    cargarCarrito();
+});
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', mostrarProductos);
