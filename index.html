@@ -3,22 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página GitHub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f0f0f0;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+    <title>Tienda Online</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>¡Bienvenido a Mi Página Web!</h1>
-    <p>Esta página está alojada en miguelitox Pages
-        By the real thekevin.</p>
+    <header>
+        <h1>Tienda Online</h1>
+        <div class="carrito">
+            <button id="boton-carrito">
+                🛒 Carrito (<span id="cantidad-carrito">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="productos" class="productos">
+            <!-- Productos se cargarán dinámicamente -->
+        </section>
+    </main>
+
+    <div id="modal-carrito" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <h2>Tu Carrito</h2>
+            <div id="lista-carrito">
+                <!-- Items del carrito -->
+            </div>
+            <div class="total">
+                Total: $<span id="total-carrito">0</span>
+            </div>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tienda Online. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
