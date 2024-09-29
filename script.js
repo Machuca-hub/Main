@@ -96,7 +96,7 @@ function mostrarProductos() {
             <h3>${producto.nombre}</h3>
             <p>${producto.descripcion}</p>
             <div class="colores"><strong>Colores:</strong> ${coloresHTML}</div>
-            <div class="precio">€${producto.precio.toFixed(2)}</div>
+            <div class="precio">${producto.precio.toFixed(2)}€</div>
             <button data-id="${producto.id}">Agregar al Carrito</button>
         `;
 
